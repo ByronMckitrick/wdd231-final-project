@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planned Hikes | Trail Explorer</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body>
+    <header class="hero">
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a class="brand" href="./index.html">Trail Explorer</a>
+        <button class="nav-link" type="button">Favorites</button>
+      </nav>
+
+      <div class="hero__content">
+        <div class="hero__copy">
+            <p class="eyebrow">Trails in Idaho</p>
+            <h1>Planned Hikes</h1>
+            <p>Keep track of the trails you want to hike and add notes for each route before you go.</p>
+            <div class="hero__actions">
+                <a class="button button--primary" href="./index.html">Home</a>
+            </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="panel">
+        <div class="panel__header">
+          <h2>Saved trail plans</h2>
+        </div>
+        <ul class="planned-list">
+          <!-- <li class="planned-list-item">
+            <span>Riverbend Loop</span>
+            <button class="button button--secondary" type="button">Remove</button>
+          </li>
+          <li class="planned-list-item">
+            <span>Sunset Ridge</span>
+            <button class="button button--secondary" type="button">Remove</button>
+          </li>
+          <li class="planned-list-item">
+            <span>Diamond Peak</span>
+            <button class="button button--secondary" type="button">Remove</button>
+          </li> -->
+        </ul>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <h2>Plan details</h2>
+        </div>
+        <form class="planned-form">
+          <label for="selected-hike">Selected hike</label>
+          <input id="selected-hike" type="text" placeholder="Hike name" />
+
+          <label for="plan-notes">Notes</label>
+          <textarea id="plan-notes" rows="5" placeholder="Add any notes or reminders for the hike"></textarea>
+
+          <button class="button button--primary" type="submit">Save plan</button>
+        </form>
+      </section>
+    </main>
+    
+</body>
+</html>
