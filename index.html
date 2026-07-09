@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trail Explorer | Idaho Hikes</title>
     <link rel="stylesheet" href="./src/css/style.css" />
+    <script type="module" src="./src/js/main.js" defer></script>
   </head>
   <body>
     <header class="hero">
       <nav class="top-nav" aria-label="Primary navigation">
         <a class="brand" href="./index.html">Trail Explorer</a>
         <button class="nav-link" id="favorites-button" type="button" aria-controls="favorites-modal" aria-expanded="false">Favorites</button>
-        <!-- <a class="nav-link" href="projectDesign.html">View design notes</a> -->
       </nav>
 
       <div class="hero__content">
@@ -20,7 +20,6 @@
           <h1>Find your next mountain escape.</h1>
           <p>Discover scenic routes, compare distances and elevation, and save your favorite adventures before the next weekend getaway.</p>
           <div class="hero__actions">
-            <!-- <a class="button button--primary" href="#trails">Explore trails</a> -->
             <a class="button button--primary" href="./plannedHikes.html">Planned Hikes</a>
           </div>
         </div>
@@ -119,33 +118,5 @@
         </ul>
       </div>
     </div>
-
-    <script>
-      const favoritesButton = document.getElementById('favorites-button');
-      const favoritesModal = document.getElementById('favorites-modal');
-      const modalClose = document.getElementById('modal-close');
-      const modalBackdrop = document.getElementById('modal-backdrop');
-
-      function closeFavoritesModal() {
-        favoritesModal.setAttribute('aria-hidden', 'true');
-        favoritesButton.classList.remove('is-active');
-        favoritesButton.setAttribute('aria-expanded', 'false');
-      }
-
-      favoritesButton.addEventListener('click', () => {
-        const isOpen = favoritesModal.getAttribute('aria-hidden') === 'false';
-
-        if (isOpen) {
-          closeFavoritesModal();
-        } else {
-          favoritesModal.setAttribute('aria-hidden', 'false');
-          favoritesButton.classList.add('is-active');
-          favoritesButton.setAttribute('aria-expanded', 'true');
-        }
-      });
-
-      modalClose.addEventListener('click', closeFavoritesModal);
-      modalBackdrop.addEventListener('click', closeFavoritesModal);
-    </script>
   </body>
 </html>
