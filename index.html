@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trail Explorer | Idaho Hikes</title>
     <link rel="stylesheet" href="./src/css/style.css" />
+    <script type="module" src="./src/js/main.js" defer></script>
   </head>
   <body>
     <header class="hero">
@@ -32,7 +33,73 @@
           <a href="#">Save a trail</a>
         </div>
 
-        <div class="trail-grid" id="trail-grid"></div>
+        <div class="trail-grid">
+          <article class="trail-card">
+            <div class="trail-image"></div>
+            <div class="trail-content">
+              <div class="trail-top">
+                <h3>Riverbend Loop</h3>
+                <span class="badge badge--easy">Easy</span>
+              </div>
+              <p>Shady riverside path with canyon overlooks and picnic pullouts.</p>
+              <ul class="trail-meta">
+                <li>6.2 mi</li>
+                <li>1,100 ft</li>
+                <li>Boise Foothills</li>
+              </ul>
+              <div class="trail-actions">
+                <div class="trail-actions__buttons">
+                  <button class="button button--secondary favorite-button" type="button">Favorite</button>
+                  <button class="trail-link button button--secondary" type="button">Plan hike</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="trail-card">
+            <div class="trail-image"></div>
+            <div class="trail-content">
+              <div class="trail-top">
+                <h3>Sunset Ridge</h3>
+                <span class="badge badge--moderate">Moderate</span>
+              </div>
+              <p>Rolling hills and high-desert views with clean switchbacks.</p>
+              <ul class="trail-meta">
+                <li>8.4 mi</li>
+                <li>1,900 ft</li>
+                <li>Sawtooth</li>
+              </ul>
+              <div class="trail-actions">
+                <div class="trail-actions__buttons">
+                  <button class="button button--secondary favorite-button" type="button">Favorite</button>
+                  <button class="trail-link button button--secondary" type="button">Plan hike</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="trail-card">
+            <div class="trail-image"></div>
+            <div class="trail-content">
+              <div class="trail-top">
+                <h3>Diamond Peak</h3>
+                <span class="badge badge--hard">Hard</span>
+              </div>
+              <p>Steep switchbacks lead to a broad alpine ridge and expansive views.</p>
+              <ul class="trail-meta">
+                <li>12.8 mi</li>
+                <li>3,200 ft</li>
+                <li>Coeur d'Alene</li>
+              </ul>
+              <div class="trail-actions">
+                <div class="trail-actions__buttons">
+                  <button class="button button--secondary favorite-button" type="button">Favorite</button>
+                  <button class="trail-link button button--secondary" type="button">Plan hike</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
@@ -51,7 +118,5 @@
         </ul>
       </div>
     </div>
-
-    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
