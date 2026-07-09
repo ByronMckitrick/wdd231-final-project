@@ -11,7 +11,6 @@
       <nav class="top-nav" aria-label="Primary navigation">
         <a class="brand" href="./index.html">Trail Explorer</a>
         <button class="nav-link" id="favorites-button" type="button" aria-controls="favorites-modal" aria-expanded="false">Favorites</button>
-        <!-- <a class="nav-link" href="projectDesign.html">View design notes</a> -->
       </nav>
 
       <div class="hero__content">
@@ -20,7 +19,6 @@
           <h1>Find your next mountain escape.</h1>
           <p>Discover scenic routes, compare distances and elevation, and save your favorite adventures before the next weekend getaway.</p>
           <div class="hero__actions">
-            <!-- <a class="button button--primary" href="#trails">Explore trails</a> -->
             <a class="button button--primary" href="./plannedHikes.html">Planned Hikes</a>
           </div>
         </div>
@@ -34,73 +32,7 @@
           <a href="#">Save a trail</a>
         </div>
 
-        <div class="trail-grid">
-          <article class="trail-card">
-            <div class="trail-image"></div>
-            <div class="trail-content">
-              <div class="trail-top">
-                <h3>Riverbend Loop</h3>
-                <span class="badge badge--easy">Easy</span>
-              </div>
-              <p>Shady riverside path with canyon overlooks and picnic pullouts.</p>
-              <ul class="trail-meta">
-                <li>6.2 mi</li>
-                <li>1,100 ft</li>
-                <li>Boise Foothills</li>
-              </ul>
-              <div class="trail-actions">
-                <div class="trail-actions__buttons">
-                  <button class="button button--secondary favorite-button" type="button">Favorite</button>
-                  <button class="trail-link button button--secondary" type="button">Plan hike</button>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="trail-card">
-            <div class="trail-image"></div>
-            <div class="trail-content">
-              <div class="trail-top">
-                <h3>Sunset Ridge</h3>
-                <span class="badge badge--moderate">Moderate</span>
-              </div>
-              <p>Rolling hills and high-desert views with clean switchbacks.</p>
-              <ul class="trail-meta">
-                <li>8.4 mi</li>
-                <li>1,900 ft</li>
-                <li>Sawtooth</li>
-              </ul>
-              <div class="trail-actions">
-                <div class="trail-actions__buttons">
-                  <button class="button button--secondary favorite-button" type="button">Favorite</button>
-                  <button class="trail-link button button--secondary" type="button">Plan hike</button>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="trail-card">
-            <div class="trail-image"></div>
-            <div class="trail-content">
-              <div class="trail-top">
-                <h3>Diamond Peak</h3>
-                <span class="badge badge--hard">Hard</span>
-              </div>
-              <p>Steep switchbacks lead to a broad alpine ridge and expansive views.</p>
-              <ul class="trail-meta">
-                <li>12.8 mi</li>
-                <li>3,200 ft</li>
-                <li>Coeur d'Alene</li>
-              </ul>
-              <div class="trail-actions">
-                <div class="trail-actions__buttons">
-                  <button class="button button--secondary favorite-button" type="button">Favorite</button>
-                  <button class="trail-link button button--secondary" type="button">Plan hike</button>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="trail-grid" id="trail-grid"></div>
       </section>
     </main>
 
@@ -120,32 +52,6 @@
       </div>
     </div>
 
-    <script>
-      const favoritesButton = document.getElementById('favorites-button');
-      const favoritesModal = document.getElementById('favorites-modal');
-      const modalClose = document.getElementById('modal-close');
-      const modalBackdrop = document.getElementById('modal-backdrop');
-
-      function closeFavoritesModal() {
-        favoritesModal.setAttribute('aria-hidden', 'true');
-        favoritesButton.classList.remove('is-active');
-        favoritesButton.setAttribute('aria-expanded', 'false');
-      }
-
-      favoritesButton.addEventListener('click', () => {
-        const isOpen = favoritesModal.getAttribute('aria-hidden') === 'false';
-
-        if (isOpen) {
-          closeFavoritesModal();
-        } else {
-          favoritesModal.setAttribute('aria-hidden', 'false');
-          favoritesButton.classList.add('is-active');
-          favoritesButton.setAttribute('aria-expanded', 'true');
-        }
-      });
-
-      modalClose.addEventListener('click', closeFavoritesModal);
-      modalBackdrop.addEventListener('click', closeFavoritesModal);
-    </script>
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
