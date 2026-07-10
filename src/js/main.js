@@ -1,7 +1,7 @@
 import { getTrails } from './data.js';
 import { renderTrailCards } from './render.js';
 
-const trailGrid = document.querySelector('#trail-grid');
+const trailGrid = document.getElementById('trail-grid');
 const favoritesButton = document.getElementById('favorites-button');
 const favoritesModal = document.getElementById('favorites-modal');
 const modalClose = document.getElementById('modal-close');
