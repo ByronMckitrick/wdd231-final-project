@@ -3,6 +3,7 @@
     "name": "Sawtooth Lake Trail",
     "address": "Iron Creek Trailhead, Iron Creek Rd, Stanley, ID 83278",
     "description": "A classic Sawtooth hike leading through forest and alpine terrain to a large mountain lake beneath jagged peaks.",
+    "image": "/images/sawtoothTrail.jpg",
     "distance_miles": 10.4,
     "distance_feet": 54912,
     "difficulty": "Moderate"
@@ -11,6 +12,7 @@
     "name": "Goat Lake Trail",
     "address": "Iron Creek Trailhead, Iron Creek Rd, Stanley, ID 83278",
     "description": "A scenic alpine hike to a striking blue lake surrounded by steep rocky walls in the Sawtooth Range.",
+    "image": "/images/goatLakeTrail.jpg",
     "distance_miles": 8.0,
     "distance_feet": 42240,
     "difficulty": "Moderate"
@@ -19,6 +21,7 @@
     "name": "Alice Lake Trail",
     "address": "Tin Cup Trailhead, Forest Rd 214, Stanley, ID 83278",
     "description": "A beautiful mountain trail that climbs past streams and wildflowers to a famous alpine lake basin.",
+    "image": "/images/aliceLakeTrail.jpg",
     "distance_miles": 12.0,
     "distance_feet": 63360,
     "difficulty": "Moderate"
@@ -27,6 +30,7 @@
     "name": "Pettit Lake to Twin Lakes",
     "address": "Pettit Lake Trailhead, Forest Rd 208, Stanley, ID 83278",
     "description": "A popular Sawtooth trail with forested sections, creek crossings, and views of dramatic granite peaks.",
+    "image": "/images/pettitLakeTrail.jpg",
     "distance_miles": 8.6,
     "distance_feet": 45408,
     "difficulty": "Moderate"
@@ -35,6 +39,7 @@
     "name": "Hell Roaring Lake Trail",
     "address": "Hell Roaring Lake Trailhead, Forest Rd 314, Stanley, ID 83278",
     "description": "A relatively accessible hike to a gorgeous mountain lake with broad views and good fishing access.",
+    "image": "/images/hellRoaringTrail.jpg",
     "distance_miles": 5.6,
     "distance_feet": 29568,
     "difficulty": "Easy"
@@ -43,6 +48,7 @@
     "name": "Fishhook Creek Trail",
     "address": "Fishhook Creek Trailhead, Forest Rd 619, Stanley, ID 83278",
     "description": "A mellow creekside hike with mountain views, meadows, and excellent wildflower displays in summer.",
+    "image": "/images/fishhookTrail.jpg",
     "distance_miles": 4.8,
     "distance_feet": 25344,
     "difficulty": "Easy"
@@ -51,6 +57,7 @@
     "name": "Pioneer Cabin Trail",
     "address": "Long Gulch Trailhead, Corral Creek Rd, Ketchum, ID 83340",
     "description": "A steady climb to a historic mountain cabin with sweeping views of the Pioneer Mountains.",
+    "image": "/images/pioneerCabinTrail.jpg",
     "distance_miles": 8.5,
     "distance_feet": 44880,
     "difficulty": "Hard"
@@ -59,6 +66,7 @@
     "name": "Toxaway Lake Loop",
     "address": "Tin Cup Trailhead, Forest Rd 214, Stanley, ID 83278",
     "description": "A longer loop passing multiple alpine lakes, streams, and high mountain scenery in the Sawtooths.",
+    "image": "/images/toxawayTrail.jpg",
     "distance_miles": 19.0,
     "distance_feet": 100320,
     "difficulty": "Hard"
@@ -67,6 +75,7 @@
     "name": "Mount Borah Trail",
     "address": "Borah Peak Trailhead, Mount Borah Rd, Mackay, ID 83251",
     "description": "Idaho’s highest peak, featuring steep climbing, major elevation gain, and exposed scrambling sections.",
+    "image": "/images/mountBorahTrail.jpg",
     "distance_miles": 7.5,
     "distance_feet": 39600,
     "difficulty": "Hard"
@@ -75,22 +84,16 @@
     "name": "Table Rock Trail",
     "address": "Old Penitentiary Trailhead, 2445 E Old Penitentiary Rd, Boise, ID 83712",
     "description": "A popular Boise foothills hike with city views and a straightforward climb to the Table Rock overlook.",
+    "image": "/images/tableRockTrail.jpg",
     "distance_miles": 3.7,
     "distance_feet": 19536,
-    "difficulty": "Moderate"
-  },
-  {
-    "name": "Hulls Gulch Interpretive Trail",
-    "address": "Camel's Back Reserve Trailhead, 1200 Heron St, Boise, ID 83702",
-    "description": "A Boise favorite with rolling foothill terrain, seasonal wildflowers, and views over the Treasure Valley.",
-    "distance_miles": 6.7,
-    "distance_feet": 35376,
     "difficulty": "Moderate"
   },
   {
     "name": "Stack Rock Trail",
     "address": "Stack Rock Trailhead, Bogus Basin Rd, Boise, ID 83702",
     "description": "A longer foothills hike to a striking granite formation with broad views of the surrounding mountains.",
+    "image": "/images/stackRockTrail.jpg",
     "distance_miles": 9.4,
     "distance_feet": 49632,
     "difficulty": "Moderate"
@@ -99,22 +102,16 @@
     "name": "Tubbs Hill Loop",
     "address": "Tubbs Hill Trailhead, 210 S 3rd St, Coeur d'Alene, ID 83814",
     "description": "An easy scenic loop above Lake Coeur d'Alene with shoreline views, rocky outcrops, and forested paths.",
+    "image": "/images/tubbsHillTrail.jpg",
     "distance_miles": 2.4,
     "distance_feet": 12672,
     "difficulty": "Easy"
   },
   {
-    "name": "Mickinnick Trail",
-    "address": "400 Woodland Dr, Sandpoint, ID 83864",
-    "description": "A steep but rewarding hike above Sandpoint with granite features and panoramic views over Lake Pend Oreille.",
-    "distance_miles": 7.0,
-    "distance_feet": 36960,
-    "difficulty": "Hard"
-  },
-  {
     "name": "Blue Lake Trail",
     "address": "Blue Lake Trailhead, ID-75 near Ketchum, ID 83340",
     "description": "A shorter alpine hike to a bright mountain lake surrounded by forest and rocky slopes.",
+    "image": "/images/blueLakeTrail.jpg",
     "distance_miles": 4.4,
     "distance_feet": 23232,
     "difficulty": "Moderate"
@@ -123,6 +120,7 @@
     "name": "Duck Lake Trail",
     "address": "Duck Lake Trailhead, near Stanley Lake, Stanley, ID 83278",
     "description": "A gentle family-friendly trail through meadows and forest to a peaceful alpine lake.",
+    "image": "/images/duckLakeTrail.jpg",
     "distance_miles": 2.8,
     "distance_feet": 14784,
     "difficulty": "Easy"
@@ -131,6 +129,7 @@
     "name": "Palisades Creek Trail",
     "address": "Palisades Creek Trailhead, Palisades Creek Rd, Irwin, ID 83428",
     "description": "A scenic creekside trail with forest, canyon views, and access to lower alpine lakes.",
+    "image": "/images/palisadesTrail.jpg",
     "distance_miles": 7.8,
     "distance_feet": 41184,
     "difficulty": "Moderate"
@@ -139,6 +138,7 @@
     "name": "Creekside Towers Trail",
     "address": "City of Rocks National Reserve, Almo, ID 83312",
     "description": "A short hike through impressive granite formations and open high-desert scenery in southern Idaho.",
+    "image": "/images/creekSideTrail.jpg",
     "distance_miles": 1.4,
     "distance_feet": 7392,
     "difficulty": "Easy"
@@ -147,16 +147,9 @@
     "name": "Pyramid and Ball Lakes Trail",
     "address": "Trailhead near Priest Lake, Bonners Ferry, ID 83805",
     "description": "A northern Idaho alpine hike through forest and meadows to two scenic mountain lakes.",
+    "image": "/images/pyramidBallTrail.jpg",
     "distance_miles": 5.4,
     "distance_feet": 28512,
     "difficulty": "Moderate"
-  },
-  {
-    "name": "Saint Mary Peak Trail",
-    "address": "St. Mary Peak Trailhead, near Kooskia, ID 83539",
-    "description": "A strenuous wilderness hike to a summit and lookout with expansive views across the Bitterroot region.",
-    "distance_miles": 8.8,
-    "distance_feet": 46464,
-    "difficulty": "Hard"
   }
 ]

@@ -27,6 +27,41 @@ function formatLocation(address) {
   return state ? `${city}, ${state}` : city;
 }
 
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function normalizeImagePath(image) {
+  if (!image) {
+    return '';
+  }
+
+  const trimmedImage = String(image).trim();
+
+  if (!trimmedImage) {
+    return '';
+  }
+
+  if (/^(https?:)?\/\//i.test(trimmedImage) || trimmedImage.startsWith('data:') || trimmedImage.startsWith('blob:')) {
+    return trimmedImage;
+  }
+
+  if (trimmedImage.startsWith('/')) {
+    return trimmedImage;
+  }
+
+  if (trimmedImage.startsWith('images/')) {
+    return `/${trimmedImage}`;
+  }
+
+  return `/images/${trimmedImage}`;
+}
+
 export function renderTrailCards(trails, container) {
   if (!container) {
     return;
@@ -43,16 +78,22 @@ export function renderTrailCards(trails, container) {
       const location = formatLocation(trail.address);
       const distanceMiles = trail.distance_miles?.toFixed(1) ?? '0.0';
       const elevationFeet = trail.distance_feet?.toLocaleString() ?? '0';
+      const trailName = escapeHtml(trail.name || 'Idaho Trail');
+      const description = escapeHtml(trail.description || '');
+      const imageSrc = normalizeImagePath(trail.image);
+      const imageMarkup = imageSrc
+        ? `<img src="${escapeHtml(imageSrc)}" alt="${trailName} trail view" loading="lazy">`
+        : '<div class="trail-image__fallback">⛰️</div>';
 
       return `
         <article class="trail-card">
-          <div class="trail-image"></div>
+          <div class="trail-image">${imageMarkup}</div>
           <div class="trail-content">
             <div class="trail-top">
-              <h3>${trail.name}</h3>
+              <h3>${trailName}</h3>
               <span class="badge ${badgeClass}">${trail.difficulty}</span>
             </div>
-            <p>${trail.description}</p>
+            <p>${description}</p>
             <ul class="trail-meta">
               <li>${distanceMiles} mi</li>
               <li>${elevationFeet} ft</li>
