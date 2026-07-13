@@ -27,7 +27,7 @@ function formatLocation(address) {
   return state ? `${city}, ${state}` : city;
 }
 
-function escapeHtml(value) {
+export function escapeHtml(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -62,7 +62,7 @@ function normalizeImagePath(image) {
   return `/images/${trimmedImage}`;
 }
 
-export function renderTrailCards(trails, container) {
+export function renderTrailCards(trails, container, favorites = []) {
   if (!container) {
     return;
   }
@@ -84,6 +84,15 @@ export function renderTrailCards(trails, container) {
       const imageMarkup = imageSrc
         ? `<img src="${escapeHtml(imageSrc)}" alt="${trailName} trail view" loading="lazy">`
         : '<div class="trail-image__fallback">⛰️</div>';
+      const normalizedFavorites = favorites
+        .map((favorite) => String(favorite || '').trim())
+        .filter(Boolean);
+      const isFavorite = normalizedFavorites.includes(String(trail.name || '').trim());
+      const favoriteButtonClass = isFavorite
+        ? 'button button--secondary favorite-button is-active'
+        : 'button button--secondary favorite-button';
+      const favoriteButtonLabel = '★'// isFavorite ? '★' : '☆';
+      const favoriteAriaLabel = isFavorite ? `Remove ${trailName} from favorites` : `Save ${trailName} to favorites`;
 
       return `
         <article class="trail-card">
@@ -101,7 +110,7 @@ export function renderTrailCards(trails, container) {
             </ul>
             <div class="trail-actions">
               <div class="trail-actions__buttons">
-                <button class="button button--secondary favorite-button" type="button">Favorite</button>
+                <button class="${favoriteButtonClass}" type="button" data-trail-name="${escapeHtml(trail.name || '')}" aria-label="${favoriteAriaLabel}" title="${favoriteAriaLabel}">${favoriteButtonLabel}</button>
                 <button class="trail-link button button--secondary" type="button">Plan hike</button>
               </div>
             </div>
