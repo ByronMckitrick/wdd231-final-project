@@ -46,7 +46,7 @@ function toggleFavorite(trailName) {
 
   favorites = favorites.includes(normalizedName)
     ? favorites.filter((favoriteTrail) => favoriteTrail !== normalizedName)
-    : [...favorites, normalizedName];
+    : favorites.concat(normalizedName)
 
   saveFavorites(favorites);
   renderFavoritesModal();
