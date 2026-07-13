@@ -1,11 +1,14 @@
 import { getTrails } from './data.js';
-import { renderTrailCards } from './render.js';
+import { escapeHtml, renderTrailCards } from './render.js';
+import { getStoredFavorites, saveFavorites } from './storage.js';
 
 const trailGrid = document.getElementById('trail-grid');
 const favoritesButton = document.getElementById('favorites-button');
 const favoritesModal = document.getElementById('favorites-modal');
 const modalClose = document.getElementById('modal-close');
 const modalBackdrop = document.getElementById('modal-backdrop');
+let trails = [];
+let favorites = [];
 
 function closeFavoritesModal() {
   if (!favoritesModal || !favoritesButton) {
@@ -15,6 +18,42 @@ function closeFavoritesModal() {
   favoritesModal.setAttribute('aria-hidden', 'true');
   favoritesButton.classList.remove('is-active');
   favoritesButton.setAttribute('aria-expanded', 'false');
+}
+
+function renderFavoritesModal() {
+  const favoritesList = document.querySelector('.favorites-list');
+
+  if (!favoritesList) {
+    return;
+  }
+
+  if (!favorites.length) {
+    favoritesList.innerHTML = '<li class="favorites-empty">No favorite trails saved yet.</li>';
+    return;
+  }
+
+  favoritesList.innerHTML = favorites
+    .map((favoriteTrail) => `<li>${escapeHtml(favoriteTrail)}</li>`)
+    .join('');
+}
+
+function toggleFavorite(trailName) {
+  const normalizedName = String(trailName || '').trim();
+
+  if (!normalizedName) {
+    return;
+  }
+
+  favorites = favorites.includes(normalizedName)
+    ? favorites.filter((favoriteTrail) => favoriteTrail !== normalizedName)
+    : [...favorites, normalizedName];
+
+  saveFavorites(favorites);
+  renderFavoritesModal();
+
+  if (trailGrid) {
+    renderTrailCards(trails, trailGrid, favorites);
+  }
 }
 
 function initializeModal() {
@@ -38,16 +77,35 @@ function initializeModal() {
   modalBackdrop.addEventListener('click', closeFavoritesModal);
 }
 
+function initializeFavoriteInteractions() {
+  if (!trailGrid) {
+    return;
+  }
+
+  trailGrid.addEventListener('click', (event) => {
+    const favoriteButton = event.target.closest('.favorite-button');
+
+    if (!favoriteButton) {
+      return;
+    }
+
+    toggleFavorite(favoriteButton.dataset.trailName);
+  });
+}
+
 async function init() {
   initializeModal();
+  initializeFavoriteInteractions();
+  favorites = getStoredFavorites();
+  renderFavoritesModal();
 
   if (!trailGrid) {
     return;
   }
 
   try {
-    const trails = await getTrails();
-    renderTrailCards(trails, trailGrid);
+    trails = await getTrails();
+    renderTrailCards(trails, trailGrid, favorites);
   } catch (error) {
     console.error(error);
     trailGrid.innerHTML = '<p class="trail-empty">Unable to load trail data right now.</p>';
