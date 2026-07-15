@@ -111,7 +111,7 @@ export function renderTrailCards(trails, container, favorites = []) {
             <div class="trail-actions">
               <div class="trail-actions__buttons">
                 <button class="${favoriteButtonClass}" type="button" data-trail-name="${escapeHtml(trail.name || '')}" aria-label="${favoriteAriaLabel}" title="${favoriteAriaLabel}">${favoriteButtonLabel}</button>
-                <button class="trail-link button button--secondary" type="button">Plan hike</button>
+                <button class="trail-link button button--secondary" type="button" data-trail-name="${escapeHtml(trail.name || '')}" aria-label="Plan ${trailName}">Plan hike</button>
               </div>
             </div>
           </div>

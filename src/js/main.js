@@ -93,9 +93,23 @@ function initializeFavoriteInteractions() {
   });
 }
 
+function initializePlanInteractions() {
+  if (!trailGrid) return;
+
+  trailGrid.addEventListener('click', (event) => {
+    const planButton = event.target.closest('.trail-link');
+    if (!planButton) return;
+
+    const trailName = planButton.dataset.trailName || '';
+    const encoded = encodeURIComponent(trailName);
+    window.location.href = `./plannedHikes.html?trail=${encoded}`;
+  });
+}
+
 async function init() {
   initializeModal();
   initializeFavoriteInteractions();
+  initializePlanInteractions();
   favorites = getStoredFavorites();
   renderFavoritesModal();
 
