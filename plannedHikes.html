@@ -32,18 +32,6 @@
           <h2>Saved trail plans</h2>
         </div>
         <ul class="planned-list">
-          <!-- <li class="planned-list-item">
-            <span>Riverbend Loop</span>
-            <button class="button button--secondary" type="button">Remove</button>
-          </li>
-          <li class="planned-list-item">
-            <span>Sunset Ridge</span>
-            <button class="button button--secondary" type="button">Remove</button>
-          </li>
-          <li class="planned-list-item">
-            <span>Diamond Peak</span>
-            <button class="button button--secondary" type="button">Remove</button>
-          </li> -->
         </ul>
       </section>
 
@@ -53,10 +41,12 @@
         </div>
         <form class="planned-form">
           <label for="selected-hike">Selected hike</label>
-          <input id="selected-hike" type="text" placeholder="Hike name" />
+          <input id="selected-hike" type="text" placeholder="Hike name" maxlength="35" />
 
           <label for="plan-notes">Notes</label>
           <textarea id="plan-notes" rows="5" placeholder="Add any notes or reminders for the hike"></textarea>
+
+          <p id="hike-name-error" class="form-error" role="alert"></p>
 
           <button class="button button--primary" type="submit">Save plan</button>
         </form>
