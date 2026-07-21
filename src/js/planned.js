@@ -112,12 +112,6 @@ function init() {
       if (nameError) {
         nameError.textContent = '';
       }
-      // if (selectedInput) {
-      //   selectedInput.setCustomValidity('');
-      // }
-      // if (notesInput) {
-      //   notesInput.setCustomValidity('');
-      // }
     };
 
     function showFormError(message, input) {
@@ -125,13 +119,6 @@ function init() {
         nameError.textContent = message;
       }
     };
-
-    if (selectedInput) {
-      selectedInput.addEventListener('input', clearNameError);
-    }
-    if (notesInput) {
-      notesInput.addEventListener('input', clearNameError);
-    }
 
     form.addEventListener('input', (e) => {
       e.preventDefault();
@@ -160,11 +147,6 @@ function init() {
 
       const name = (selectedInput?.value || '').trim();
       const notes = (notesInput?.value || '').trim();
-
-      // if (!name) {
-      //   selectedInput?.focus();
-      //   return;
-      // }
 
       const hasBadCharacters = /[<>]/.test(name) || /[<>]/.test(notes);
 

@@ -83,8 +83,8 @@ function initializeFavoriteInteractions() {
   }
 
   trailGrid.addEventListener('click', (event) => {
-    // const favoriteButton = event.target.closest('.favorite-button');
-    const favoriteButton = document.getElementById('favorite-button')
+    const favoriteButton = event.target.closest('.favorite-button');
+
     if (!favoriteButton) {
       return;
     }
