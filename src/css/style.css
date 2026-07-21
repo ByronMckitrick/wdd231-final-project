@@ -188,7 +188,7 @@
         padding: 11px 16px;
         border-radius: 999px;
         font-weight: 600;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
       .button:hover,
@@ -276,7 +276,10 @@
         border: solid 1px var(--muted);
       }
 
-      /* Planned list remove button */
+      .form-error {
+        color: #cc1515;
+      }
+
       .planned-remove {
         background: transparent;
         color: #a7482f;
@@ -458,13 +461,7 @@
         color: var(--muted);
       }
 
-      @media (max-width: 840px) {
-        .hero__content { grid-template-columns: 1fr; }
-        .controls { grid-template-columns: 1fr; }
-      }
-
       @media (max-width: 540px) {
         .top-nav { flex-direction: column; gap: 10px; align-items: flex-start; }
         .panel { padding: 18px; }
-        .trail-actions { flex-direction: column; align-items: flex-start; }
       }

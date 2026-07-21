@@ -40,26 +40,7 @@ function normalizeImagePath(image) {
   if (!image) {
     return '';
   }
-
-  const trimmedImage = String(image).trim();
-
-  if (!trimmedImage) {
-    return '';
-  }
-
-  if (/^(https?:)?\/\//i.test(trimmedImage) || trimmedImage.startsWith('data:') || trimmedImage.startsWith('blob:')) {
-    return trimmedImage;
-  }
-
-  if (trimmedImage.startsWith('/')) {
-    return trimmedImage;
-  }
-
-  if (trimmedImage.startsWith('images/')) {
-    return `/${trimmedImage}`;
-  }
-
-  return `/images/${trimmedImage}`;
+  return image;
 }
 
 export function renderTrailCards(trails, container, favorites = []) {
@@ -91,7 +72,7 @@ export function renderTrailCards(trails, container, favorites = []) {
       const favoriteButtonClass = isFavorite
         ? 'button button--secondary favorite-button is-active'
         : 'button button--secondary favorite-button';
-      const favoriteButtonLabel = '★'// isFavorite ? '★' : '☆';
+      const favoriteButtonLabel = '★'
       const favoriteAriaLabel = isFavorite ? `Remove ${trailName} from favorites` : `Save ${trailName} to favorites`;
 
       return `

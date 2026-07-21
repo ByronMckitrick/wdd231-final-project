@@ -40,7 +40,6 @@ function getQueryParam(name) {
 }
 
 function init() {
-  // Favorites modal setup
   let favorites = getStoredFavorites();
 
   function closeFavoritesModal() {
@@ -95,6 +94,7 @@ function init() {
   const form = qs('.planned-form');
   const selectedInput = qs('#selected-hike');
   const notesInput = qs('#plan-notes');
+  const nameError = qs('#hike-name-error');
   const list = qs('.planned-list');
 
   if (list) {
@@ -108,21 +108,82 @@ function init() {
   }
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    function clearNameError() {
+      if (nameError) {
+        nameError.textContent = '';
+      }
+      // if (selectedInput) {
+      //   selectedInput.setCustomValidity('');
+      // }
+      // if (notesInput) {
+      //   notesInput.setCustomValidity('');
+      // }
+    };
+
+    function showFormError(message, input) {
+      if (nameError) {
+        nameError.textContent = message;
+      }
+    };
+
+    if (selectedInput) {
+      selectedInput.addEventListener('input', clearNameError);
+    }
+    if (notesInput) {
+      notesInput.addEventListener('input', clearNameError);
+    }
+
+    form.addEventListener('input', (e) => {
       e.preventDefault();
+
       const name = (selectedInput?.value || '').trim();
       const notes = (notesInput?.value || '').trim();
-      if (!name) {
-        selectedInput?.focus();
+
+      const hasBadCharacters = /[<>]/.test(name) || /[<>]/.test(notes);
+
+      if (hasBadCharacters) {
+        showFormError('Please do not use < or >.', selectedInput || notesInput);
         return;
       }
 
+      if (name.length > 35) {
+        const message = 'Please use 35 characters or less.';
+        showFormError(message, selectedInput);
+        return;
+      }
+
+      clearNameError();
+    })
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = (selectedInput?.value || '').trim();
+      const notes = (notesInput?.value || '').trim();
+
+      // if (!name) {
+      //   selectedInput?.focus();
+      //   return;
+      // }
+
+      const hasBadCharacters = /[<>]/.test(name) || /[<>]/.test(notes);
+
+      if (hasBadCharacters) {
+        showFormError('Please do not use < or >.', selectedInput || notesInput);
+        return;
+      }
+
+      if (name.length > 35) {
+        const message = 'Please use 35 characters or less.';
+        showFormError(message, selectedInput);
+        return;
+      }
+
+      clearNameError();
       addPlannedHike({ name, notes });
       if (notesInput) notesInput.value = '';
       if (selectedInput) selectedInput.value = '';
       renderPlannedList();
-
-      // Optionally navigate back to home or show a confirmation
     });
   }
 }
